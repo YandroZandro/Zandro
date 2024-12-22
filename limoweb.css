@@ -1,0 +1,269 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Helvetica', sans-serif;
+  color: white;
+  text-decoration: none;
+}
+
+body {
+  background: rgb(0, 0, 0);
+}
+
+.content-wrapper {
+  padding: 0 40px;
+}
+
+/* Header */
+.header {
+  background: transparent;
+  position: fixed;
+  height: 10vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  z-index: 100;
+}
+
+.logo img {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.navbar a {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: gold;
+}
+
+/* CTA Button */
+.cta-button {
+  background-color: gold;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: white;
+  color: gold;
+}
+
+/* Dropdown Menu */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: black;
+  border: 1px solid #333;
+  padding: 10px 0;
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  list-style: none; /* Removes bullet points */
+  width: 200px;
+}
+
+.dropdown-menu li {
+  padding: 5px 20px;
+}
+
+.dropdown-menu li a {
+  color: white;
+  font-size: 14px;
+}
+
+.dropdown-menu li a:hover {
+  background-color: gold;
+  color: black;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: url('your-background-image.jpg') no-repeat center center/cover;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+}
+
+.heading {
+  font-size: 3.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.subhead {
+  font-size: 1.5rem;
+  font-weight: 500;
+  display: flex;
+  gap: 12px;
+  overflow: hidden;
+}
+
+.word {
+  opacity: 0;
+  transform: scale(1);
+  animation: wordPop 1s ease-in-out forwards;
+  animation-delay: calc(var(--order) * 1s);
+}
+
+@keyframes wordPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.word:nth-child(1) {
+  --order: 0;
+}
+
+.word:nth-child(2) {
+  --order: 1;
+}
+
+.word:nth-child(3) {
+  --order: 2;
+}
+
+.subhead:hover .word {
+  animation: emphasizeAll 2s infinite;
+}
+
+/* Luxury Text Effect */
+.luxury {
+  position: relative;
+  font-size: 3.25rem;
+  background: linear-gradient(to right, rgb(255, 215, 0), rgb(225, 222, 22));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 
+    0 0 10px rgba(255, 215, 0, 0.8), 
+    0 0 20px rgba(255, 215, 0, 0.6), 
+    0 0 30px rgba(255, 223, 0, 0.4), 
+    0 0 40px rgba(225, 222, 22, 0.3);
+  animation: glow 2s infinite;
+}
+
+.luxury::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 0, 1), rgba(255, 215, 0, 0.4));
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 223, 0, 0.5);
+  animation: fairyGlow 3s infinite ease-in-out;
+}
+
+@keyframes fairyGlow {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(150px, -10px) scale(1);
+    opacity: 1;
+  }
+}
+
+/* Button Box */
+.btn-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.btn-box a {
+  width: auto;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: gold;
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-box a.transparent-btn {
+  background-color: transparent;
+  border: 2px solid gold;
+  color: white;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-box a.transparent-btn:hover {
+  background-color: aqua;
+  color: black;
+  border: 2px solid aqua;
+}
+
+.btn-box a:not(.transparent-btn):hover {
+  background-color: aqua;
+  color: black;
+  border: 2px solid aqua;
+}
