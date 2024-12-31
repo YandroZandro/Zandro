@@ -1,0 +1,72 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden; /* Prevents scrollbars from appearing */
+}
+
+h1 {
+  color: rgb(0, 0, 0);
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Space between content and image */
+}
+
+.content {
+  color: rgb(0, 0, 0);
+  max-width: 400px; /* Adjust as needed */
+}
+
+.image-container {
+  position: relative;
+  width: 300px; /* Adjust to the width of your image */
+  height: 300px; /* Adjust to the height of your image */
+}
+
+.image-container img {
+  position: absolute;
+  left: -100vw; /* Start from far outside the left of the viewport */
+  max-width: 100%;
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.image-container img.active {
+  left: 0;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.image-container img.prev {
+  transform: translateX(-100%);
+}
+
+.image-container img.next {
+  transform: translateX(100%);
+}
+
+.slider-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.slider-controls button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 24px; /* Increased font size for better visibility */
+}
+
+.slider-controls button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
