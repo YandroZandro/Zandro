@@ -1,5 +1,6 @@
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -56,7 +57,10 @@ h1 {
 .slider-controls {
   display: flex;
   justify-content: space-between;
+  width: 600px; /* Match the width of the image container */
   margin-top: 20px;
+  margin-left: 30rem;
+  
 }
 
 .slider-controls button {
